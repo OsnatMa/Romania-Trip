@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="he"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1" name="viewport"/><title>טיול לרומניה</title><style>
+:root{--bg:#f6f3ee;--ink:#202124;--muted:#64615c;--card:#fffdf9;--line:#ded7cc;--accent:#8f5f3f;--nature:#4f8d63;--attraction:#b86464;--drive:#5b78a8;--flight:#6d73a8;--hotel:#9a7437;--food:#a46c3a;--culture:#8160a8;--shopping:#9a6d8a;--easy:#808080}*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#fff8ee,#f3f1ed);font-family:Arial,'Noto Sans Hebrew',sans-serif;color:var(--ink);font-size:21px}.app{max-width:1280px;margin:0 auto;min-height:100vh}.hero{padding:28px 28px 14px}.hero h1{margin:0;font-size:44px;letter-spacing:-.5px}.hero p{margin:8px 0 0;color:var(--muted);font-size:22px}.tabs{position:sticky;top:0;z-index:20;background:rgba(246,243,238,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:12px 18px;display:flex;gap:10px;overflow-x:auto}.tab{border:0;background:#fff;border:1px solid #e4ded5;border-radius:16px;padding:13px 18px;font-size:20px;line-height:1.1;cursor:pointer;white-space:nowrap;color:#3f3a35;box-shadow:0 1px 4px rgba(0,0,0,.05)}.tab small{display:block;color:#837a70;font-size:14px;margin-top:4px}.tab.active{background:#2f2924;color:#fff;border-color:#2f2924}.tab.active small{color:#eee}.day{display:none;padding:22px 28px 40px;animation:fade .2s ease}.day.active{display:block}.day-head{display:grid;grid-template-columns:1fr auto;gap:18px;align-items:start;margin-bottom:22px}.day-title{background:#fff;border:1px solid #e6ded2;border-radius:24px;padding:26px;box-shadow:0 10px 30px rgba(43,35,25,.07)}.day-title h2{font-size:42px;margin:0 0 8px;letter-spacing:-.5px}.day-title .subtitle{font-size:26px;font-weight:700;color:#513b2c;margin:0}.day-title .area{margin-top:10px;color:var(--muted);font-size:20px}.stay-card{min-width:320px;background:#fff7e8;border:1px solid #ecd9b3;border-radius:24px;padding:20px;box-shadow:0 10px 30px rgba(43,35,25,.06);font-size:18px}.stay-card b{font-size:23px;display:block;margin-bottom:6px}.stay-card a{display:inline-block;margin-top:10px}.timeline{position:relative;padding-right:118px}.timeline:before{content:"";position:absolute;right:58px;top:0;bottom:0;width:4px;background:#d8d0c5;border-radius:4px}.event{position:relative;background:var(--card);border:1px solid #e8e0d6;border-radius:24px;margin:0 0 18px;padding:22px 24px 22px 24px;box-shadow:0 8px 28px rgba(41,34,26,.07);border-right:10px solid var(--easy)}.event:before{content:"";position:absolute;right:-71px;top:26px;width:22px;height:22px;border-radius:50%;background:#fff;border:5px solid var(--easy);box-shadow:0 0 0 5px #f6f3ee}.time{position:absolute;right:-118px;top:23px;width:90px;text-align:center;background:#2f2924;color:white;border-radius:18px;padding:8px 0;font-size:22px;font-weight:800}.event.nature{border-right-color:var(--nature)}.event.nature:before{border-color:var(--nature)}.event.attraction{border-right-color:var(--attraction)}.event.attraction:before{border-color:var(--attraction)}.event.drive{border-right-color:var(--drive)}.event.drive:before{border-color:var(--drive)}.event.flight{border-right-color:var(--flight)}.event.flight:before{border-color:var(--flight)}.event.hotel{border-right-color:var(--hotel)}.event.hotel:before{border-color:var(--hotel)}.event.food{border-right-color:var(--food)}.event.food:before{border-color:var(--food)}.event.culture{border-right-color:var(--culture)}.event.culture:before{border-color:var(--culture)}.event.shopping{border-right-color:var(--shopping)}.event.shopping:before{border-color:var(--shopping)}.event.easy{border-right-color:var(--easy)}.event.easy:before{border-color:var(--easy)}.event-top{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.badge{font-size:17px;font-weight:800;border-radius:999px;padding:7px 12px;background:#f1eee9;color:#564f47}.event h3{font-size:30px;margin:0;letter-spacing:-.2px}.event p{font-size:22px;line-height:1.65;margin:12px 0 0}.event ul{margin:12px 0 0;padding:0 22px}.event li{font-size:22px;line-height:1.65;margin:3px 0}.nav{display:inline-block;margin-top:16px;padding:12px 18px;border-radius:14px;background:#2f2924;color:white;text-decoration:none;font-weight:800;font-size:19px}.hint{font-weight:800;color:#4a3a2b}.footer{padding:0 28px 30px;color:var(--muted);font-size:17px}
+.controls{padding:0 28px 12px;display:flex;gap:10px;align-items:center}.view-toggle{border:0;background:#2f2924;color:white;border-radius:16px;padding:13px 18px;font-size:20px;font-weight:800;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.12)}.view-toggle{width:54px;height:50px;padding:0;display:inline-flex;align-items:center;justify-content:center}.view-toggle:after{content:"▦";font-size:28px;line-height:1}body.compact .view-toggle:after{content:"☰";font-size:28px;line-height:1}body.compact{font-size:18px}body.compact .hero{padding:20px 28px 8px}body.compact .tabs{padding:8px 18px}.compact .tab{font-size:17px;padding:10px 14px;border-radius:13px}.compact .tab small{font-size:12px}.compact .day{padding-top:14px}.compact .day-head{margin-bottom:14px}.compact .day-title{padding:18px;border-radius:18px}.compact .day-title h2{font-size:32px}.compact .day-title .subtitle{font-size:21px}.compact .day-title .area{font-size:17px}.compact .stay-card{padding:15px;border-radius:18px;font-size:16px}.compact .stay-card b{font-size:19px}.compact .timeline{padding-right:96px}.compact .timeline:before{right:48px}.compact .event{padding:15px 18px;margin-bottom:11px;border-radius:18px}.compact .event:before{right:-61px;top:20px;width:18px;height:18px}.compact .time{right:-100px;top:16px;width:78px;font-size:18px;padding:7px 0}.compact .event h3{font-size:24px}.compact .event p,.compact .event li{font-size:18px;line-height:1.45;margin-top:8px}.compact .event ul{margin-top:8px}.compact .badge{font-size:14px;padding:5px 9px}.compact .nav{font-size:16px;padding:9px 13px;margin-top:10px}
+body.compact .hero{display:none}body.compact .controls{position:sticky;top:0;z-index:35;background:rgba(246,243,238,.97);padding:8px 12px 6px;justify-content:flex-start}body.compact .tabs{top:64px;gap:6px;padding:7px 10px}body.compact .day-head{display:block;margin:10px 0 8px}body.compact .day-title{padding:12px 14px;border-radius:14px}body.compact .day-title h2{font-size:26px;margin:0}body.compact .day-title .subtitle{font-size:17px;margin-top:4px}body.compact .day-title .area{display:none}body.compact .stay-card{display:none}body.compact .timeline{padding-right:74px}body.compact .timeline:before{right:36px;width:3px}body.compact .event{margin-bottom:7px;padding:10px 12px 10px 10px;border-radius:14px;border-right-width:7px;box-shadow:0 3px 12px rgba(41,34,26,.06)}body.compact .event:before{right:-48px;top:15px;width:14px;height:14px;border-width:4px;box-shadow:0 0 0 4px #f6f3ee}body.compact .time{right:-78px;top:9px;width:58px;border-radius:13px;padding:6px 0;font-size:16px}body.compact .event-top{gap:6px;align-items:center}body.compact .badge{font-size:0;padding:0;background:transparent;width:26px;text-align:center}body.compact .badge::first-letter{font-size:20px}body.compact .event h3{font-size:19px;line-height:1.2;margin:0}body.compact .event p,body.compact .event ul,body.compact .event li,body.compact .nav{display:none!important}body.compact .footer{display:none}@keyframes fade{from{opacity:.5;transform:translateY(5px)}to{opacity:1;transform:none}}@media(max-width:760px){body{font-size:19px}.hero{padding:20px 16px 10px}.hero h1{font-size:34px}.hero p{font-size:18px}.tabs{padding:10px 12px}.tab{font-size:18px;padding:12px 14px}.day{padding:16px 14px 30px}.day-head{display:block}.day-title{padding:20px;border-radius:20px}.day-title h2{font-size:32px}.day-title .subtitle{font-size:22px}.stay-card{min-width:0;margin-top:14px}.timeline{padding-right:86px}.timeline:before{right:40px}.event{padding:18px 18px;margin-bottom:16px;border-radius:20px}.event:before{right:-56px}.time{right:-88px;width:70px;font-size:18px}.event h3{font-size:25px}.event p,.event li{font-size:20px;line-height:1.6}.badge{font-size:15px}.nav{font-size:18px}}
+
+.day-nav{border:0;background:#fff;color:#2f2924;border:1px solid #e4ded5;border-radius:14px;width:48px;height:48px;font-size:34px;line-height:1;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.current-day-label{background:#fff;border:1px solid #e4ded5;border-radius:14px;padding:12px 18px;font-size:20px;font-weight:900;color:#2f2924;min-width:210px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.06)}
+.day-summary{background:#fff;border:1px solid #e7ded3;border-radius:22px;padding:18px 20px;margin:0 0 22px;box-shadow:0 8px 24px rgba(41,34,26,.06)}
+.day-summary b{display:block;font-size:25px;margin-bottom:12px;color:#372d26}.summary-chip{display:inline-flex;align-items:center;gap:6px;margin:5px 0 5px 8px;padding:10px 14px;border-radius:999px;background:#f4eee6;border:1px solid #e5d8c9;font-size:19px;font-weight:800;color:#473a31}.priority{display:inline-block;margin-inline-start:6px;padding:6px 10px;border-radius:999px;font-size:16px;font-weight:900;background:#fff3c4;color:#634b00;border:1px solid #ead783}.priority.optional{background:#eef3ff;color:#38537a;border-color:#d4def4}.priority.rest{background:#eef8ed;color:#3f6844;border-color:#d5e8d2}
+body.compact .current-day-label{font-size:16px;padding:9px 10px;min-width:150px}body.compact .day-nav{width:40px;height:40px;font-size:28px}body.compact .day-summary{display:none}body.compact .priority{display:none!important}body.compact .controls{gap:6px}body.compact .view-toggle{width:42px;height:40px}.compact .event p,.compact .event ul,.compact .event li,.compact .nav{display:none!important}
+@media(max-width:760px){.controls{padding:0 14px 10px;gap:7px}.current-day-label{font-size:17px;min-width:0;flex:1;padding:11px 8px}.day-nav{width:43px;height:43px;font-size:30px}.day-summary{padding:15px;margin-bottom:16px;border-radius:18px}.day-summary b{font-size:22px}.summary-chip{font-size:17px;padding:8px 11px;margin:4px 0 4px 5px}.priority{font-size:14px;padding:5px 8px}body.compact .tabs{top:52px}body.compact .current-day-label{font-size:14px;flex:1;min-width:0}body.compact .day-title .subtitle{display:none}body.compact .tab{font-size:15px;padding:8px 10px}body.compact .tab small{display:none}body.compact .day{padding:10px 10px 24px}body.compact .event h3{font-size:17px}.compact .timeline{padding-right:65px}.compact .time{right:-68px;width:52px;font-size:14px}.compact .event:before{right:-43px}}
+
+
+/* Floating menu and utility panels */
+.menu-toggle{position:fixed;right:16px;top:16px;z-index:110;width:58px;height:58px;border:0;border-radius:20px;background:#2f2924;color:#fff;font-size:31px;font-weight:900;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 28px rgba(43,35,25,.22)}
+.menu-backdrop{position:fixed;inset:0;background:rgba(20,16,12,.32);z-index:90;opacity:0;pointer-events:none;transition:opacity .18s ease}.menu-backdrop.open{opacity:1;pointer-events:auto}
+.quick-drawer{position:fixed;right:14px;top:84px;z-index:100;width:min(330px,calc(100vw - 28px));background:rgba(255,253,249,.98);border:1px solid var(--line);border-radius:28px;padding:14px;box-shadow:0 18px 48px rgba(43,35,25,.22);backdrop-filter:blur(10px);transform:translateX(calc(100% + 30px));opacity:0;pointer-events:none;transition:transform .2s ease,opacity .2s ease}.quick-drawer.open{transform:translateX(0);opacity:1;pointer-events:auto}.drawer-title{display:flex;align-items:center;justify-content:space-between;margin:4px 8px 12px;font-size:23px;font-weight:900;color:#2f2924}.drawer-close{border:0;background:#f1eee9;border-radius:14px;width:40px;height:40px;font-size:25px;cursor:pointer}.drawer-buttons{display:grid;grid-template-columns:1fr 1fr;gap:10px}.rail-btn{min-height:74px;border:0;border-radius:20px;background:#fff;border:1px solid #e4ded5;font-size:30px;display:grid;place-items:center;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.06)}.rail-btn.active{background:#2f2924;color:#fff;transform:scale(1.02)}
+.utility-panels{display:none;padding:22px 28px 42px}.utility-panels.active{display:block}.program-view.hidden{display:none}.app-panel{display:none}.app-panel.active{display:block}.panel-card{background:#fffdf9;border:1px solid #e6ded2;border-radius:28px;padding:30px;box-shadow:0 10px 30px rgba(43,35,25,.07);max-width:1100px;margin:0 auto}.panel-card h2{font-size:42px;margin:0 0 8px}.panel-lead{font-size:22px;color:var(--muted);margin:0 0 22px}.pay-grid,.info-grid,.weather-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}.pay-item,.info-box,.weather-card,.cost-row,.star-row{background:#fff;border:1px solid #e8e0d5;border-radius:20px;padding:18px;box-shadow:0 2px 10px rgba(0,0,0,.04)}.pay-item{display:grid;grid-template-columns:auto 1fr;gap:14px}.pay-icon{font-size:32px}.pay-item b,.info-box b,.weather-card b{display:block;font-size:22px}.pay-item span,.weather-card span{display:block;color:var(--muted);margin-top:4px}.pay-item p{margin:8px 0 2px;font-size:26px;font-weight:800;color:#5f3d25}.pay-item small,.cost-row span,.star-row small{color:var(--muted)}.panel-subtitle{font-size:28px;margin:28px 0 12px}.cost-list,.star-list{display:grid;gap:10px}.cost-row{display:grid;gap:6px}.nav-day{background:#fff;border:1px solid #e8e0d5;border-radius:20px;margin:12px 0;padding:14px}.nav-day summary{font-size:24px;font-weight:800;cursor:pointer}.nav-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:14px}.nav-pill{display:grid;grid-template-columns:auto 1fr;gap:10px;align-items:center;background:#eef4ff;color:#1d3b70;text-decoration:none;border-radius:18px;padding:16px;border:1px solid #d7e4fa}.nav-pill span{font-weight:800}.weather-card{text-decoration:none;color:var(--ink);display:grid;gap:4px;font-size:30px}.star-row{display:grid;grid-template-columns:90px 1fr auto;gap:12px;align-items:center}.star-row span{font-weight:900;color:#8f5f3f}.empty-note{padding:20px;color:var(--muted)}
+@media(max-width:760px){body{font-size:22px}.menu-toggle{right:10px;top:10px;width:52px;height:52px;border-radius:18px;font-size:28px}.quick-drawer{right:10px;top:70px;width:min(320px,calc(100vw - 20px));border-radius:24px}.drawer-buttons{grid-template-columns:1fr 1fr}.rail-btn{min-height:66px;border-radius:18px;font-size:28px}.panel-card{padding:22px;border-radius:24px}.panel-card h2{font-size:34px}.panel-lead{font-size:20px}.star-row{grid-template-columns:70px 1fr}.star-row small{grid-column:2}.hero,.controls,.utility-panels,.day{padding-right:14px;padding-left:14px}}
+
+/* updates: menu no longer covers text, compact toggle in drawer, read-more cards */
+.menu-toggle{right:auto!important;left:16px!important;top:18px!important}
+.quick-drawer{top:88px!important}
+body.compact .menu-toggle{top:12px!important}
+@media(max-width:760px){.menu-toggle{left:10px!important;right:auto!important;top:12px!important}.quick-drawer{top:76px!important}}
+.drawer-buttons .rail-btn.compact-mode{background:#fff8ec;border-color:#ead8b8}
+body.compact .drawer-buttons .rail-btn.compact-mode{background:#2f2924;color:#fff;border-color:#2f2924}
+.event .more-details{display:none;margin-top:8px}
+.event.expanded .more-details{display:block}
+.read-more{margin-top:12px;border:1px solid #e1d8cc;background:#fff;border-radius:14px;padding:10px 14px;font-size:18px;font-weight:900;color:#332a24;cursor:pointer}
+body.compact .read-more,body.compact .more-details{display:none!important}
+.total-box{background:#fff7e8;border:2px solid #ecd9b3;border-radius:22px;padding:20px;margin:0 0 20px;box-shadow:0 8px 24px rgba(41,34,26,.06)}
+.total-box b{display:block;font-size:26px;margin-bottom:8px}.total-box .big-total{font-size:38px;font-weight:1000;color:#6b3f1f}.total-box small{display:block;color:#6c6258;font-size:16px;margin-top:8px}.price-table{width:100%;border-collapse:separate;border-spacing:0 10px;margin-top:14px}.price-table th{text-align:right;color:#5b5149;font-size:16px}.price-table td{background:#fff;border-top:1px solid #eadfd2;border-bottom:1px solid #eadfd2;padding:12px;font-size:18px}.price-table td:first-child{border-right:1px solid #eadfd2;border-radius:0 14px 14px 0;font-weight:900}.price-table td:last-child{border-left:1px solid #eadfd2;border-radius:14px 0 0 14px;font-weight:900;color:#5b3f2b}
+</style></head><body><main class="app"><header class="hero"><h1>טיול לרומניה</h1><p>5–15 ביולי · מסלול משפחתי לפי ימים</p></header><div class="controls">
+
+<button aria-label="היום הקודם" class="day-nav" id="prevDay" type="button">‹</button>
+<div class="current-day-label" id="currentDayLabel">יום 1 • ראשון 5.7</div>
+<button aria-label="היום הבא" class="day-nav" id="nextDay" type="button">›</button>
+</div><button aria-label="פתיחת תפריט" class="menu-toggle" id="menuToggle" type="button">☰</button><div class="menu-backdrop" id="menuBackdrop"></div><aside aria-label="תפריט מהיר" class="quick-drawer" id="quickDrawer"><div class="drawer-title"><span>תפריט</span><button aria-label="סגירת תפריט" class="drawer-close" id="drawerClose" type="button">×</button></div><div class="drawer-buttons">
+<button aria-label="תוכנית" class="rail-btn active" data-view="program" title="תוכנית">📅</button>
+<button aria-label="ניווט" class="rail-btn" data-view="navigation" title="ניווט">🧭</button>
+<button aria-label="תשלומים" class="rail-btn" data-view="payments" title="תשלומים">💳</button>
+<button aria-label="חובה לראות" class="rail-btn" data-view="stars" title="חובה לראות">⭐</button>
+<button aria-label="היום" class="rail-btn" data-action="today" title="היום">📍</button>
+<button aria-label="מזג אוויר" class="rail-btn" data-view="weather" title="מזג אוויר">☀️</button>
+<button aria-label="חשובים" class="rail-btn" data-view="important" title="חשובים">ℹ️</button>
+<button aria-label="תצוגה קומפקטית" class="rail-btn compact-mode" data-action="compact" title="תצוגה קומפקטית">▦</button></div></aside><div class="utility-panels" id="utilityPanels"><section class="app-panel" id="panel-navigation"><div class="panel-card"><h2>🧭 ניווט</h2><p class="panel-lead">קיצורי ניווט לפי יום. מוצגים רק מקומות שיש להם קישור ניווט במסלול.</p><details class="nav-day" open=""><summary>יום 1 • ראשון 5.7 · יוצאים לדרך: ישראל → בוקרשט → סינאיה</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+L%C4%83stunilor+Nr.+20%2C+Sinaia" rel="noopener" target="_blank"><span>20:00</span><b>איסוף רכב ונסיעה ל־Casa Miu בסינאיה</b></a></div></details><details class="nav-day" open=""><summary>יום 2 • שני 6.7 · יום טבע בהרי הבוצ׳ג׳י: אגם, כביש נופי ומפל</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Bolboci+Lake+Romania" rel="noopener" target="_blank"><span>10:00</span><b>רכס הבוצ׳ג׳י ואגם בולבוצ׳י</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Cascada+Url%C4%83toarea+Bu%C8%99teni" rel="noopener" target="_blank"><span>15:00</span><b>מפל השואגת – Cascada Urlătoarea</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Miu+Sinaia" rel="noopener" target="_blank"><span>20:00</span><b>חזרה ל־Casa Miu</b></a></div></details><details class="nav-day" open=""><summary>יום 3 • שלישי 7.7 · אקשן בבושטני, מכרות מלח ומעבר לבראשוב</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Kalinderu+Alpine+Coaster+Bu%C8%99teni" rel="noopener" target="_blank"><span>10:00</span><b>מגלשות ההרים Kalinderu Alpine Coaster</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Salina+Sl%C4%83nic+Prahova" rel="noopener" target="_blank"><span>13:00</span><b>מכרות המלח Slănic Prahova + צהריים</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank"><span>19:00</span><b>נסיעה ל־Hanul Anei בבראשוב</b></a></div></details><details class="nav-day" open=""><summary>יום 4 • רביעי 8.7 · מסלול 7 הסולמות ואז ערב בעיר</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Canionul+%C8%98apte+Sc%C4%83ri+D%C3%A2mbul+Morii" rel="noopener" target="_blank"><span>10:00</span><b>מסלול 7 הסולמות – Canionul Șapte Scări</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank"><span>16:00</span><b>חזרה ל־Hanul Anei למנוחה</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+Republicii+Bra%C8%99ov" rel="noopener" target="_blank"><span>18:00</span><b>מרכז בראשוב / מדרחוב רפובליצ׳י</b></a></div></details><details class="nav-day" open=""><summary>יום 5 • חמישי 9.7 · פארק חבלים, הר טמפה והעיר העתיקה</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Parc+Aventura+Bra%C8%99ov" rel="noopener" target="_blank"><span>10:00</span><b>פארק החבלים Parc Aventura Brașov</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Telecabina+T%C3%A2mpa+Bra%C8%99ov" rel="noopener" target="_blank"><span>15:00</span><b>רכבל להר טמפה – Tâmpa</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Pia%C8%9Ba+Sfatului+Bra%C8%99ov" rel="noopener" target="_blank"><span>17:00</span><b>העיר העתיקה של בראשוב</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank"><span>20:00</span><b>חזרה ל־Hanul Anei</b></a></div></details><details class="nav-day" open=""><summary>יום 6 • שישי 10.7 · קניון זרנשט, קארטינג והתארגנות לשבת</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Pr%C4%83p%C4%83stiile+Z%C4%83rne%C8%99tilor" rel="noopener" target="_blank"><span>10:00</span><b>קניון זרנשט – Prăpăstiile Zărneștilor</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=MasterKart+Bra%C8%99ov" rel="noopener" target="_blank"><span>13:00</span><b>קארטינג – MasterKart</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank"><span>15:00</span><b>חזרה ל־Hanul Anei והתארגנות לשבת</b></a></div></details><details class="nav-day" open=""><summary>יום 8 • ראשון 12.7 · דרך הטראנספאגאראשאן: באלאה, קאפרה, דובים ווידרארו</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Transf%C4%83g%C4%83r%C4%83%C8%99an+DN7C+Romania" rel="noopener" target="_blank"><span>09:30</span><b>נסיעה אל כביש הטראנספאגאראשאן</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=B%C3%A2lea+Cascad%C4%83+cable+car" rel="noopener" target="_blank"><span>11:15</span><b>מפל באלאה והרכבל – Bâlea Cascadă</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=B%C3%A2lea+Lake+Romania" rel="noopener" target="_blank"><span>12:30</span><b>אגם באלאה – Bâlea Lake</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Cascada+Capra+Romania" rel="noopener" target="_blank"><span>14:15</span><b>מפל קאפרה – Cascada Capra</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Vidraru+Dam+Romania" rel="noopener" target="_blank"><span>16:00</span><b>סכר ואגם וידרארו</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=54b+Strada+Aviator+Popi%C8%99teanu+Bucharest" rel="noopener" target="_blank"><span>17:00</span><b>נסיעה ל־Ultimate Living Experience בבוקרשט</b></a></div></details><details class="nav-day" open=""><summary>יום 9 • שני 13.7 · בוקרשט: מוזיאון חושים, רייזרים וגני צ׳ישמיג׳יו</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Museum+of+Senses+Bucharest+AFI+Cotroceni" rel="noopener" target="_blank"><span>10:00</span><b>מוזיאון החושים – Museum of Senses</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=ATV+rentals+Predeal+Ronen+Bakhshy" rel="noopener" target="_blank"><span>14:00</span><b>רייזרים בפרדיאל – ATV Rentals Predeal</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Ci%C8%99migiu+Gardens+Bucharest" rel="noopener" target="_blank"><span>17:00</span><b>גני צ׳ישמיג׳יו – Cișmigiu Gardens</b></a></div></details><details class="nav-day" open=""><summary>יום 10 • שלישי 14.7 · זוחלים, טרופי, קניון וקצת שופינג</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Reptiland+Bucharest+1C+Expozi%C8%9Biei+Boulevard" rel="noopener" target="_blank"><span>10:00</span><b>Reptiland Bucharest</b></a><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=ParkLake+Shopping+Center+Bucharest" rel="noopener" target="_blank"><span>14:00</span><b>ParkLake Shopping Center</b></a></div></details><details class="nav-day" open=""><summary>יום 11 • רביעי 15.7 · חוזרים הביתה: בוקרשט → תל אביב</summary><div class="nav-links"><a class="nav-pill" href="https://www.google.com/maps/search/?api=1&amp;query=Henri+Coand%C4%83+International+Airport+OTP" rel="noopener" target="_blank"><span>10:30</span><b>יציאה לשדה התעופה בבוקרשט והחזרת רכב</b></a></div></details></div></section><section class="app-panel" id="panel-payments"><div class="panel-card"><h2>💳 תשלומים ועלויות</h2><p class="panel-lead">ריכוז מהיר של מה שכבר ידוע. מחירי כניסה/חניה מופיעים לפי מה שנכתב במסלול.</p><div class="pay-grid"><div class="pay-item"><div class="pay-icon">🏨</div><div><b>Casa Miu</b><span>5–7.07</span><p>₪2,244</p><small>תשלום 19.6 · ביטול עד 20.6</small></div></div><div class="pay-item"><div class="pay-icon">🏨</div><div><b>Hanul Anei - entire property</b><span>7–12.07</span><p>₪9,588</p><small>מקדמה ₪620 שולמה · ביטול עד 23.7</small></div></div><div class="pay-item"><div class="pay-icon">🏨</div><div><b>Ultimate Living Experience</b><span>12–15.07</span><p>₪2,868</p><small>שולם</small></div></div></div><h3 class="panel-subtitle">עלויות מהמסלול</h3><div class="cost-list"><div class="cost-row"><b>יום 2 • שני 6.7 · רכס הבוצ׳ג׳י ואגם בולבוצ׳י</b><span>זמן נסיעה מסינאיה: כ־45–50 דקות. חניה: בערך 10 ליי. כניסה: חינמית.</span></div><div class="cost-row"><b>יום 3 • שלישי 7.7 · מגלשות ההרים Kalinderu Alpine Coaster</b><span>עלות משוערת : 30–40 ליי לסיבוב, ויש לפעמים הנחות בכרטיסייה.</span></div><div class="cost-row"><b>יום 3 • שלישי 7.7 · מכרות המלח Slănic Prahova + צהריים</b><span>שהות מומלצת : כשעתיים. להביא נעליים נוחות וקפוצ׳ון — קריר בפנים.</span></div><div class="cost-row"><b>יום 3 • שלישי 7.7 · מכרות המלח Slănic Prahova + צהריים</b><span>עלות משוערת : כ־45 ליי למבוגר וכ־30 ליי לילד/סטודנט.</span></div><div class="cost-row"><b>יום 4 • רביעי 8.7 · מסלול 7 הסולמות – Canionul Șapte Scări</b><span>זמן נסיעה מבראשוב: 15–20 דקות. חניה: במתחם Dâmbul Morii בתשלום סמלי.</span></div><div class="cost-row"><b>יום 5 • חמישי 9.7 · בוקר רגוע</b><span>09:00 ☕ רגוע בוקר רגוע ארוחת בוקר ויציאה עם נעליים סגורות.</span></div><div class="cost-row"><b>יום 5 • חמישי 9.7 · פארק החבלים Parc Aventura Brașov</b><span>שהות מומלצת : כ־3.5 שעות. להביא מנשא לתינוקות ונעליים סגורות.</span></div><div class="cost-row"><b>יום 5 • חמישי 9.7 · רכבל להר טמפה – Tâmpa</b><span>נסיעה קצרה אל מרכז העיר וחניה באחד החניונים המוסדרים.</span></div><div class="cost-row"><b>יום 5 • חמישי 9.7 · רכבל להר טמפה – Tâmpa</b><span>עלייה ברכבל לתצפית מעל בראשוב, תמונות והליכה קלה ביער.</span></div><div class="cost-row"><b>יום 5 • חמישי 9.7 · רכבל להר טמפה – Tâmpa</b><span>עלות משוערת הלוך־חזור: כ־18 RON למבוגר ו־10 RON לילד.</span></div><div class="cost-row"><b>יום 5 • חמישי 9.7 · העיר העתיקה של בראשוב</b><span>טיול בכיכר המועצה Piața Sfatului, הכנסייה השחורה ורחוב החוט Strada Sforii.</span></div><div class="cost-row"><b>יום 6 • שישי 10.7 · קניון זרנשט – Prăpăstiile Zărneștilor</b><span>זמן שהות מומלץ: כשעה. עלות כניסה משוערת: כ־5 RON לאדם.</span></div><div class="cost-row"><b>יום 6 • שישי 10.7 · קארטינג – MasterKart</b><span>עלויות משוערות ל־10 דקות: 40–80 ליי, לפי סוג הרכב. ילדים מגיל 6 יכולים לנהוג עצמאית מעל גובה 1.40.</span></div><div class="cost-row"><b>יום 7 • שבת 11.7 · שבת שלום</b><span>אפשר זמן משפחה, מנוחה ומשחקים בוילה.</span></div><div class="cost-row"><b>יום 8 • ראשון 12.7 · מפל קאפרה – Cascada Capra</b><span>מקום טוב למתיחת רגליים, אוכל קל ותמונות.</span></div><div class="cost-row"><b>יום 9 • שני 13.7 · מוזיאון החושים – Museum of Senses</b><span>פתוח בדרך כלל 10:00–22:00. עלות משוערת : כ־40 ליי לאדם.</span></div><div class="cost-row"><b>יום 10 • שלישי 14.7 · Reptiland Bucharest</b><span>עלויות משוערות: מבוגר 55 RON, ילד/סטודנט 45 RON, פנסיונר 35 RON, ילדים מתחת לגיל 4 ללא תשלום.</span></div></div><h3 class="panel-subtitle">רייזרים וטרקטורונים בפרדיאל</h3>
+<div class="cost-list"><div class="cost-row"><b>מה כולל</b><span>מדריך שיוצא עם כלי בנפרד + קסדה. המחיר הוא לפי כלי, לא לפי מספר נוסעים. נוסע עם המדריך משלם 50%.</span></div><div class="cost-row"><b>מה להביא</b><span>דרכון ורישיון נהיגה להרשמה. בחורף צריך ביגוד חם מאוד, אבל ביולי מומלץ עדיין להביא שכבה קלה.</span></div></div>
+<table class="price-table"><thead><tr><th>כלי</th><th>שעה</th><th>שעה וחצי</th><th>שעתיים</th><th>3 שעות</th></tr></thead><tbody>
+<tr><td>טרקטורון</td><td>250 RON<br/>≈ ₪162</td><td>300 RON<br/>≈ ₪194</td><td>400 RON<br/>≈ ₪259</td><td>600 RON<br/>≈ ₪388</td></tr>
+<tr><td>רייזר 2 מקומות</td><td>400 RON<br/>≈ ₪259</td><td>500 RON<br/>≈ ₪324</td><td>700 RON<br/>≈ ₪453</td><td>1000 RON<br/>≈ ₪647</td></tr>
+<tr><td>רייזר 4 מקומות</td><td>500 RON<br/>≈ ₪324</td><td>700 RON<br/>≈ ₪453</td><td>900 RON<br/>≈ ₪582</td><td>1300 RON<br/>≈ ₪841</td></tr>
+</tbody></table></div></section><section class="app-panel" id="panel-stars"><div class="panel-card"><h2>⭐ חובה לראות</h2><p class="panel-lead">ריכוז התחנות המרכזיות כדי לקבל החלטות מהר כשאין זמן.</p><div class="star-list"><div class="star-row"><span>10:00</span><b>רכס הבוצ׳ג׳י ואגם בולבוצ׳י</b><small>יום 2 • שני 6.7</small></div><div class="star-row"><span>10:00</span><b>מגלשות ההרים Kalinderu Alpine Coaster</b><small>יום 3 • שלישי 7.7</small></div><div class="star-row"><span>13:00</span><b>מכרות המלח Slănic Prahova + צהריים</b><small>יום 3 • שלישי 7.7</small></div><div class="star-row"><span>10:00</span><b>מסלול 7 הסולמות – Canionul Șapte Scări</b><small>יום 4 • רביעי 8.7</small></div><div class="star-row"><span>10:00</span><b>פארק החבלים Parc Aventura Brașov</b><small>יום 5 • חמישי 9.7</small></div><div class="star-row"><span>09:30</span><b>נסיעה אל כביש הטראנספאגאראשאן</b><small>יום 8 • ראשון 12.7</small></div><div class="star-row"><span>11:15</span><b>מפל באלאה והרכבל – Bâlea Cascadă</b><small>יום 8 • ראשון 12.7</small></div><div class="star-row"><span>12:30</span><b>אגם באלאה – Bâlea Lake</b><small>יום 8 • ראשון 12.7</small></div><div class="star-row"><span>10:00</span><b>מוזיאון החושים – Museum of Senses</b><small>יום 9 • שני 13.7</small></div><div class="star-row"><span>10:00</span><b>Reptiland Bucharest</b><small>יום 10 • שלישי 14.7</small></div></div></div></section><section class="app-panel" id="panel-weather"><div class="panel-card"><h2>☀️ מזג אוויר</h2><p class="panel-lead">קישורים מהירים לתחזית לפי אזורי הלינה.</p><div class="weather-grid">
+<a class="weather-card" href="https://www.google.com/search?q=Sinaia+weather" rel="noopener" target="_blank">🏔️<b>סינאיה</b><span>תחזית להרים</span></a>
+<a class="weather-card" href="https://www.google.com/search?q=Brasov+weather" rel="noopener" target="_blank">🌲<b>בראשוב</b><span>תחזית לעיר ולטבע</span></a>
+<a class="weather-card" href="https://www.google.com/search?q=Bucharest+weather" rel="noopener" target="_blank">🏙️<b>בוקרשט</b><span>תחזית לעיר</span></a>
+</div></div></section><section class="app-panel" id="panel-important"><div class="panel-card"><h2>ℹ️ חשובים</h2><div class="info-grid">
+<div class="info-box"><b>✈️ שדות תעופה</b><p>יציאה מ־TLV · נחיתה/המראה מבוקרשט OTP.</p></div>
+<div class="info-box"><b>🏨 לינות</b><p>5–7.07 Casa Miu, סינאיה<br/>7–12.07 Hanul Anei, בראשוב<br/>12–15.07 Ultimate Living Experience, בוקרשט</p></div>
+<div class="info-box"><b>📌 שימוש בזמן אמת</b><p>בתצוגה קומפקטית רואים רק שעה + יעד. בתצוגה רגילה רואים פרטים, טיפים וניווט.</p></div>
+<div class="info-box"><b>🧳 כדאי לשמור</b><p>דרכונים, ביטוחים, רישיון נהיגה, אישורי הזמנות, מטענים, מים ונעליים נוחות לימי טבע.</p></div>
+<div class="info-box"><b>🏎️ רייזרים/טרקטורונים Predeal</b><p>רונן · Tudor Vladimirescu 22, Predeal<br/>+972522562449 · +40727195025 · 0769 788 893</p></div></div></div></section></div><div class="program-view" id="programView"><nav aria-label="בחירת יום" class="tabs">
+<button class="tab active" data-day="day0">יום 1 • ראשון 5.7<small>TLV → OTP → סינאיה ✈️</small></button>
+<button class="tab" data-day="day1">יום 2 • שני 6.7<small>סינאיה / בוצ׳ג׳י 🌿</small></button>
+<button class="tab" data-day="day2">יום 3 • שלישי 7.7<small>סינאיה → בראשוב 🚗</small></button>
+<button class="tab" data-day="day3">יום 4 • רביעי 8.7<small>בראשוב / 7 הסולמות 🌿</small></button>
+<button class="tab" data-day="day4">יום 5 • חמישי 9.7<small>בראשוב 🏛️</small></button>
+<button class="tab" data-day="day5">יום 6 • שישי 10.7<small>זרנשט / בראשוב 🌿</small></button>
+<button class="tab" data-day="day6">יום 7 • שבת 11.7<small>בראשוב · שבת 🕯️</small></button>
+<button class="tab" data-day="day7">יום 8 • ראשון 12.7<small>בראשוב → בוקרשט 🚗</small></button>
+<button class="tab" data-day="day8">יום 9 • שני 13.7<small>בוקרשט 🎡</small></button>
+<button class="tab" data-day="day9">יום 10 • שלישי 14.7<small>בוקרשט 🛍️</small></button>
+<button class="tab" data-day="day10">יום 11 • רביעי 15.7<small>OTP → TLV ✈️</small></button>
+</nav><section class="day active" id="day0"><div class="day-head"><div class="day-title"><h2>יום 1 • ראשון 5.7</h2><p class="subtitle">יוצאים לדרך: ישראל → בוקרשט → סינאיה</p><div class="area">📍 TLV → OTP → Sinaia</div></div>
+<aside class="stay-card"><b>🏨 לינה: Casa Miu</b><div>5-7.07</div><div>Strada Lăstunilor Nr. 20, Sinaia</div><div>סה״כ ₪2,244 • תשלום 19.6 • ביטול עד 20.6</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+L%C4%83stunilor+Nr.+20%2C+Sinaia" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Casa Miu</span><span class="summary-chip">✈️ נחיתה ב־OTP</span><span class="summary-chip">🚗 נסיעה לסינאיה</span><span class="summary-chip">⭐ פתיחת טיול רגועה</span></div></div><div class="timeline">
+<article class="event flight"><div class="time">14:00</div><div class="event-top"><span class="badge">✈️ טיסה</span><h3>הגעה לנתב״ג</h3></div>
+<ul>
+<li>מגיעים לשדה התעופה בן גוריון (TLV), טרמינל 3/לפי הכרטיסים.</li>
+<li>צ׳ק אין, מסירת מזוודות, אוכל קל לפני הטיסה.</li>
+</ul>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event flight"><div class="time">16:00</div><div class="event-top"><span class="badge">✈️ טיסה</span><h3>טיסה לבוקרשט</h3></div>
+<p>טיסה לרומניה, שדה התעופה Henri Coandă בבוקרשט (OTP).</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event drive"><div class="time">20:00</div><div class="event-top"><span class="badge">🚗 נסיעה</span><h3>איסוף רכב ונסיעה ל־Casa Miu בסינאיה</h3></div>
+<ul>
+<li>אוספים את הרכב בשדה התעופה בבוקרשט ונוסעים לסינאיה.</li>
+<li><span class="hint">יעד הלינה</span>: Casa Miu, Strada Lăstunilor Nr. 20.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+L%C4%83stunilor+Nr.+20%2C+Sinaia" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day1"><div class="day-head"><div class="day-title"><h2>יום 2 • שני 6.7</h2><p class="subtitle">יום טבע בהרי הבוצ׳ג׳י: אגם, כביש נופי ומפל</p><div class="area">📍 Sinaia / Bucegi / Bușteni</div></div>
+<aside class="stay-card"><b>🏨 לינה: Casa Miu</b><div>5-7.07</div><div>Strada Lăstunilor Nr. 20, Sinaia</div><div>סה״כ ₪2,244 • תשלום 19.6 • ביטול עד 20.6</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+L%C4%83stunilor+Nr.+20%2C+Sinaia" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Casa Miu</span><span class="summary-chip">🌿 אגם בולבוצ׳י</span><span class="summary-chip">🌲 מפל השואגת</span><span class="summary-chip">👍 יום טבע</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר רגוע והתארגנות</h3></div>
+<p>ארוחת בוקר, ציוד ליום טבע, מים, נשנושים ובגדים נוחים.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">10:00</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>רכס הבוצ׳ג׳י ואגם בולבוצ׳י</h3></div>
+<ul>
+<li>נסיעה דרך שמורת Bucegi ודרך ההרים Transbucegi אל Bolboci Lake.</li>
+<li>מה עושים שם: תצפיות, עצירות צילום, אוויר הרים וארוחת צהריים רגועה.</li>
+<li>אפשרות אם מתאים: שיט קיאקים באגם.</li>
+<li><span class="hint">זמן נסיעה</span> מסינאיה: כ־45–50 דקות. חניה: בערך 10 ליי. כניסה: חינמית.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Bolboci+Lake+Romania" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">15:00</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>מפל השואגת – Cascada Urlătoarea</h3></div>
+<ul>
+<li>מסלול יער מוצל ונעים שיוצא מאזור בושטני אל המפל.</li>
+<li>הליכה: כ־45 דקות לכל כיוון, סה״כ כשעה וחצי.</li>
+<li>מתאים כעצירת טבע יפה אחרי האגם, בקצב רגוע.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Cascada+Url%C4%83toarea+Bu%C8%99teni" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event hotel"><div class="time">20:00</div><div class="event-top"><span class="badge">🏨 לינה</span><h3>חזרה ל־Casa Miu</h3></div>
+<p>ארוחת ערב, מקלחות, סרט והתארגנות ליום הבא.</p>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Miu+Sinaia" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event easy"><div class="time">22:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>לילה טוב</h3></div>
+<p>סוגרים יום טבע ראשון ברומניה.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day2"><div class="day-head"><div class="day-title"><h2>יום 3 • שלישי 7.7</h2><p class="subtitle">אקשן בבושטני, מכרות מלח ומעבר לבראשוב</p><div class="area">📍 Bușteni → Slănic → Brașov</div></div>
+<aside class="stay-card"><b>🏨 לינה: Hanul Anei - entire property</b><div>7-12.07</div><div>260 Calea București, Brașov</div><div>סה״כ ₪9,588 • מקדמה ₪620 שולמה • ביטול עד 23.7</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Hanul Anei</span><span class="summary-chip">🎡 Kalinderu</span><span class="summary-chip">🧂 מכרות מלח</span><span class="summary-chip">🚗 מעבר לבראשוב</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר טוב ויציאה</h3></div>
+<p>מתארגנים, מפנים את הלינה בסינאיה ויוצאים ליום עם הרבה נסיעות.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event attraction"><div class="time">10:00</div><div class="event-top"><span class="badge">🎡 אטרקציה</span><h3>מגלשות ההרים Kalinderu Alpine Coaster</h3></div>
+<ul>
+<li>פארק קלינדרו נמצא בתוך בושטני, כ־10–15 דקות מסינאיה.</li>
+<li>חוויה קצרה וכיפית לילדים ולמבוגרים.</li>
+<li><span class="hint">עלות משוערת</span>: 30–40 ליי לסיבוב, ויש לפעמים הנחות בכרטיסייה.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Kalinderu+Alpine+Coaster+Bu%C8%99teni" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event attraction"><div class="time">13:00</div><div class="event-top"><span class="badge">🎡 אטרקציה</span><h3>מכרות המלח Slănic Prahova + צהריים</h3></div>
+<ul>
+<li>נסיעה מבושטני/סינאיה לכיוון Slănic — בערך שעה וחצי.</li>
+<li><span class="hint">חשוב</span> להגיע בזמן: המכרה נסגר לרוב בשעות אחר הצהריים המוקדמות.</li>
+<li><span class="hint">שהות מומלצת</span>: כשעתיים. <span class="hint">להביא</span> נעליים נוחות וקפוצ׳ון — קריר בפנים.</li>
+<li><span class="hint">עלות משוערת</span>: כ־45 ליי למבוגר וכ־30 ליי לילד/סטודנט.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Salina+Sl%C4%83nic+Prahova" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event drive"><div class="time">19:00</div><div class="event-top"><span class="badge">🚗 נסיעה</span><h3>נסיעה ל־Hanul Anei בבראשוב</h3></div>
+<ul>
+<li>יוצאים לכיוון בראשוב, מגיעים לוילה ומתארגנים קליל.</li>
+<li><span class="hint">יעד הלינה</span>: Hanul Anei - entire property, 260 Calea București.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event easy"><div class="time">22:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>לילה טוב</h3></div>
+<p>יום מעבר הסתיים — מחר מתחילים את אזור בראשוב.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day3"><div class="day-head"><div class="day-title"><h2>יום 4 • רביעי 8.7</h2><p class="subtitle">מסלול 7 הסולמות ואז ערב בעיר</p><div class="area">📍 Brașov / Dâmbul Morii</div></div>
+<aside class="stay-card"><b>🏨 לינה: Hanul Anei - entire property</b><div>7-12.07</div><div>260 Calea București, Brașov</div><div>סה״כ ₪9,588 • מקדמה ₪620 שולמה • ביטול עד 23.7</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Hanul Anei</span><span class="summary-chip">⭐ 7 הסולמות</span><span class="summary-chip">🍽️ ערב במרכז בראשוב</span><span class="summary-chip">🌿 יום טבע קליל</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר והתארגנות למסלול</h3></div>
+<p>ארוחת בוקר, מים, מנשא לתינוקות ונעלי ספורט סגורות.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">10:00</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>מסלול 7 הסולמות – Canionul Șapte Scări</h3></div>
+<ul>
+<li>מסלול יער יפהפה עם נחל, קניון וסולמות.</li>
+<li><span class="hint">עם תינוקות</span>: חוזרים ברגל במסלול העוקף — לא באומגה.</li>
+<li><span class="hint">זמן נסיעה</span> מבראשוב: 15–20 דקות. חניה: במתחם Dâmbul Morii בתשלום סמלי.</li>
+<li>חלוקת זמן נוחה: כשעה עד פתח הקניון, 30–40 דקות בסולמות, ואז חזרה רגועה דרך היער.</li>
+<li><span class="hint">טיפ</span>: לעצור לפיקניק/צהריים ביער.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Canionul+%C8%98apte+Sc%C4%83ri+D%C3%A2mbul+Morii" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event hotel"><div class="time">16:00</div><div class="event-top"><span class="badge">🏨 לינה</span><h3>חזרה ל־Hanul Anei למנוחה</h3></div>
+<p>מנוחה קצרה, מקלחות והתרעננות לפני ערב בעיר.</p>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event food"><div class="time">18:00</div><div class="event-top"><span class="badge">🍽️ אוכל</span><h3>מרכז בראשוב / מדרחוב רפובליצ׳י</h3></div>
+<ul>
+<li>טיול קליל במדרחוב Strada Republicii.</li>
+<li>אפשרות לארוחת ערב במסעדת “בראשית” או “מוישה”.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Strada+Republicii+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event easy"><div class="time">20:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>חזרה לדירה ולילה טוב</h3></div>
+<p>מקלחות, מנוחה וסגירת יום.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day4"><div class="day-head"><div class="day-title"><h2>יום 5 • חמישי 9.7</h2><p class="subtitle">פארק חבלים, הר טמפה והעיר העתיקה</p><div class="area">📍 Brașov</div></div>
+<aside class="stay-card"><b>🏨 לינה: Hanul Anei - entire property</b><div>7-12.07</div><div>260 Calea București, Brașov</div><div>סה״כ ₪9,588 • מקדמה ₪620 שולמה • ביטול עד 23.7</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Hanul Anei</span><span class="summary-chip">🎡 פארק חבלים</span><span class="summary-chip">🌿 הר טמפה</span><span class="summary-chip">🏛️ העיר העתיקה</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר רגוע</h3></div>
+<p>ארוחת בוקר ויציאה עם נעליים סגורות.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event attraction"><div class="time">10:00</div><div class="event-top"><span class="badge">🎡 אטרקציה</span><h3>פארק החבלים Parc Aventura Brașov</h3></div>
+<ul>
+<li>פארק חבלים ליד Lake Noua בדרום־מזרח בראשוב.</li>
+<li>מגיעים, קונים כרטיסים, מקבלים ציוד ויוצאים למסלולים.</li>
+<li><span class="hint">שהות מומלצת</span>: כ־3.5 שעות. <span class="hint">להביא</span> מנשא לתינוקות ונעליים סגורות.</li>
+<li>13:30–14:15: הפסקת צהריים באזור האגם הסמוך.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Parc+Aventura+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">15:00</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>רכבל להר טמפה – Tâmpa</h3></div>
+<ul>
+<li>נסיעה קצרה אל מרכז העיר וחניה באחד החניונים המוסדרים.</li>
+<li>עלייה ברכבל לתצפית מעל בראשוב, תמונות והליכה קלה ביער.</li>
+<li><span class="hint">עלות משוערת</span> הלוך־חזור: כ־18 RON למבוגר ו־10 RON לילד.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Telecabina+T%C3%A2mpa+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event culture"><div class="time">17:00</div><div class="event-top"><span class="badge">🏛️ עיר/תרבות</span><h3>העיר העתיקה של בראשוב</h3></div>
+<ul>
+<li>טיול בכיכר המועצה Piața Sfatului, הכנסייה השחורה ורחוב החוט Strada Sforii.</li>
+<li>זה זמן טוב לגלידה, תמונות ושיטוט רגוע.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Pia%C8%9Ba+Sfatului+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event hotel"><div class="time">20:00</div><div class="event-top"><span class="badge">🏨 לינה</span><h3>חזרה ל־Hanul Anei</h3></div>
+<p>מקלחות, סרט ומנוחה.</p>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day5"><div class="day-head"><div class="day-title"><h2>יום 6 • שישי 10.7</h2><p class="subtitle">קניון זרנשט, קארטינג והתארגנות לשבת</p><div class="area">📍 Zărnești / Brașov</div></div>
+<aside class="stay-card"><b>🏨 לינה: Hanul Anei - entire property</b><div>7-12.07</div><div>260 Calea București, Brașov</div><div>סה״כ ₪9,588 • מקדמה ₪620 שולמה • ביטול עד 23.7</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Hanul Anei</span><span class="summary-chip">🌿 קניון זרנשט</span><span class="summary-chip">🏎️ קארטינג</span><span class="summary-chip">🕯️ התארגנות לשבת</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר והתארגנות</h3></div>
+<p>ארוחת בוקר ויציאה ליום קצר יחסית לפני שבת.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">10:00</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>קניון זרנשט – Prăpăstiile Zărneștilor</h3></div>
+<ul>
+<li>נסיעה מבראשוב לפתח הקניון: כ־45–50 דקות.</li>
+<li>טיול רגלי נינוח בתוך קניון טבע יפה, בקצב של הילדים.</li>
+<li>זמן שהות מומלץ: כשעה. עלות כניסה משוערת: כ־5 RON לאדם.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Pr%C4%83p%C4%83stiile+Z%C4%83rne%C8%99tilor" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event attraction"><div class="time">13:00</div><div class="event-top"><span class="badge">🎡 אטרקציה</span><h3>קארטינג – MasterKart</h3></div>
+<ul>
+<li>נסיעה מקניון זרנשט למסלול: כ־25–30 דקות.</li>
+<li>אקשן קצר וכיפי לילדים שמתאים להם. להגיע בנעלי ספורט, בגדים נוחים ומים.</li>
+<li>עלויות משוערות ל־10 דקות: 40–80 ליי, לפי סוג הרכב. ילדים מגיל 6 יכולים לנהוג עצמאית מעל גובה 1.40.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=MasterKart+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event hotel"><div class="time">15:00</div><div class="event-top"><span class="badge">🏨 לינה</span><h3>חזרה ל־Hanul Anei והתארגנות לשבת</h3></div>
+<p>מנוחת צהריים, התארגנות, מקלחות וסידורים לשבת.</p>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day6"><div class="day-head"><div class="day-title"><h2>יום 7 • שבת 11.7</h2><p class="subtitle">שבת מנוחה בבראשוב</p><div class="area">📍 Brașov</div></div>
+<aside class="stay-card"><b>🏨 לינה: Hanul Anei - entire property</b><div>7-12.07</div><div>260 Calea București, Brașov</div><div>סה״כ ₪9,588 • מקדמה ₪620 שולמה • ביטול עד 23.7</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=260+Calea+Bucure%C8%99ti%2C+Bra%C8%99ov" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Hanul Anei</span><span class="summary-chip">🕯️ שבת מנוחה</span><span class="summary-chip">🧸 זמן משפחה</span><span class="summary-chip">☕ בלי נסיעות</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">10:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>שבת שלום</h3></div>
+<ul>
+<li>יום רגוע בלי עומס ובלי נסיעות מתוכננות.</li>
+<li>אפשר זמן משפחה, מנוחה ומשחקים בוילה.</li>
+</ul>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day7"><div class="day-head"><div class="day-title"><h2>יום 8 • ראשון 12.7</h2><p class="subtitle">דרך הטראנספאגאראשאן: באלאה, קאפרה, דובים ווידרארו</p><div class="area">📍 Brașov → Transfăgărășan → Bucharest</div></div>
+<aside class="stay-card"><b>🏨 לינה: Ultimate Living Experience</b><div>12-15.07</div><div>54b Strada Aviator Popișteanu, Sector 1, Bucharest</div><div>סה״כ ₪2,868 • שולם</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=54b+Strada+Aviator+Popi%C8%99teanu%2C+Sector+1%2C+Bucharest" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Ultimate Living</span><span class="summary-chip">⭐ טראנספאגאראשאן</span><span class="summary-chip">🌊 אגם באלאה</span><span class="summary-chip">🚗 יום נסיעה ארוך</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר ויציאה מבראשוב</h3></div>
+<p>ארוחת בוקר, אריזה ויציאה ליום נסיעה ארוך וחווייתי לכיוון בוקרשט.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event drive"><div class="time">09:30</div><div class="event-top"><span class="badge">🚗 נסיעה</span><h3>נסיעה אל כביש הטראנספאגאראשאן</h3></div>
+<ul>
+<li>יוצאים מבראשוב מערבה דרך DN1 ופונים דרומה אל DN7C.</li>
+<li><span class="hint">זמן נסיעה</span> ראשון: כשעה ו־45 דקות — מתאים לנשנוש בוקר או שינה לילדים.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Transf%C4%83g%C4%83r%C4%83%C8%99an+DN7C+Romania" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">11:15</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>מפל באלאה והרכבל – Bâlea Cascadă</h3></div>
+<ul>
+<li>חונים בתחנת הרכבל התחתונה, מתרשמים מהמפל ועולים ברכבל לפסגה.</li>
+<li>חוויה דרמטית של מצוקים ונוף אלפיני.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=B%C3%A2lea+Cascad%C4%83+cable+car" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">12:30</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>אגם באלאה – Bâlea Lake</h3></div>
+<ul>
+<li>אגם אלפיני בגובה מעל 2,000 מטר.</li>
+<li>להוציא קפוצ׳ונים ועליוניות חמות לילדים ולתינוקות.</li>
+<li>זמן לתמונות, הליכה קצרה סביב האגם ופיקניק.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=B%C3%A2lea+Lake+Romania" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">14:15</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>מפל קאפרה – Cascada Capra</h3></div>
+<ul>
+<li>עצירה יפה ממש ליד הכביש אחרי חציית המנהרה.</li>
+<li>מקום טוב למתיחת רגליים, אוכל קל ותמונות.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Cascada+Capra+Romania" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event drive"><div class="time">14:45</div><div class="event-top"><span class="badge">🚗 נסיעה</span><h3>נסיעת היער ותצפיות דובים</h3></div>
+<ul>
+<li>ממשיכים דרומה ביער לכיוון אגם וידרארו.</li>
+<li><span class="hint">בטיחות</span>: מצלמים מתוך הרכב בלבד, חלונות סגורים, לא יורדים ולא מאכילים.</li>
+</ul>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">16:00</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>סכר ואגם וידרארו</h3></div>
+<ul>
+<li>הליכה קצרה על גשר הסכר, תצפית לאגם ותמונות ליד פסל איש החשמל.</li>
+<li>הסכר דרמטי ויפה במיוחד לקראת אחר הצהריים.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Vidraru+Dam+Romania" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event drive"><div class="time">17:00</div><div class="event-top"><span class="badge">🚗 נסיעה</span><h3>נסיעה ל־Ultimate Living Experience בבוקרשט</h3></div>
+<ul>
+<li>נפרדים מההרים וממשיכים לבוקרשט.</li>
+<li><span class="hint">יעד הלינה</span>: Ultimate Living Experience, 54b Strada Aviator Popișteanu, Sector 1.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=54b+Strada+Aviator+Popi%C8%99teanu+Bucharest" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event hotel"><div class="time">21:00</div><div class="event-top"><span class="badge">🏨 לינה</span><h3>הגעה, מקלחות ולישון</h3></div>
+<p>סיום יום ארוך במיוחד — מנוחה טובה בבוקרשט.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day8"><div class="day-head"><div class="day-title"><h2>יום 9 • שני 13.7</h2><p class="subtitle">בוקרשט: מוזיאון חושים, רייזרים וגני צ׳ישמיג׳יו</p><div class="area">📍 Bucharest / Predeal</div></div>
+<aside class="stay-card"><b>🏨 לינה: Ultimate Living Experience</b><div>12-15.07</div><div>54b Strada Aviator Popișteanu, Sector 1, Bucharest</div><div>סה״כ ₪2,868 • שולם</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=54b+Strada+Aviator+Popi%C8%99teanu%2C+Sector+1%2C+Bucharest" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Ultimate Living</span><span class="summary-chip">🎡 מוזיאון החושים</span><span class="summary-chip">🏎️ רייזרים</span><span class="summary-chip">🌳 צ׳ישמיג׳יו</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר והתארגנות</h3></div>
+<p>ארוחת בוקר ויציאה לפי הקצב.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event attraction"><div class="time">10:00</div><div class="event-top"><span class="badge">🎡 אטרקציה</span><h3>מוזיאון החושים – Museum of Senses</h3></div>
+<ul>
+<li>ממוקם בקניון AFI Cotroceni, קומה שנייה ליד IMAX.</li>
+<li>פתוח בדרך כלל 10:00–22:00. <span class="hint">עלות משוערת</span>: כ־40 ליי לאדם.</li>
+<li>חוויה קלילה וצבעונית שמתאימה לילדים ולמבוגרים.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Museum+of+Senses+Bucharest+AFI+Cotroceni" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event attraction"><div class="time">14:00</div><div class="event-top"><span class="badge">🎡 אטרקציה</span><h3>רייזרים בפרדיאל – ATV Rentals Predeal</h3></div>
+
+<div class="more-details"><ul>
+<li><b>כלים זמינים:</b> 2 רייזרים ל־4 מקומות, 3 רייזרים ל־2 מקומות, ו־10 טרקטורונים ל־2 מקומות.</li>
+<li><b>מחירים ב־RON:</b> טרקטורון 250/300/400/600 לשעה/שעה וחצי/שעתיים/3 שעות. רייזר 2 מקומות 400/500/700/1000. רייזר 4 מקומות 500/700/900/1300.</li>
+<li><b>כולל:</b> מדריך שיוצא עם כלי בנפרד + קסדה.</li>
+<li><b>חשוב:</b> המחיר הוא לכלי, לא לפי מספר נוסעים. נוסע שמצטרף למדריך משלם 50% מהמחיר.</li>
+<li><b>טלפונים:</b> +972522562449 · +40727195025 · 0769 788 893</li>
+<li><b>קישורים:</b> <a href="https://g.co/kgs/eBaeYsT" rel="noopener" target="_blank">כתובת</a> · <a href="https://g.co/kgs/cvDFQiq" rel="noopener" target="_blank">ביקורות</a> · <a href="https://g.co/kgs/fohVty3" rel="noopener" target="_blank">תמונות</a></li>
+</ul></div><button class="read-more" type="button">קראי עוד</button><a class="nav" href="https://g.co/kgs/eBaeYsT" rel="noopener" target="_blank">פתח ניווט</a><ul><li>טיול שטח מודרך בפרדיאל, בין סינאיה לבראשוב, באזור יערות והרי הקרפטים.</li><li>יש כמה מסלולים: שעה לתצפית/בקתת סוסאי, שעה וחצי לעמק אזוגה וחציית נחל, שעתיים לבקתת דיחם או מסלול טבע פראי בשמורה.</li><li>כתובת: Tudor Vladimirescu 22, Predeal. חובה להביא דרכון ורישיון נהיגה להרשמה.</li></ul>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event nature"><div class="time">17:00</div><div class="event-top"><span class="badge">🌿 טבע</span><h3>גני צ׳ישמיג׳יו – Cișmigiu Gardens</h3></div>
+<ul>
+<li>פארק עירוני נעים במרכז בוקרשט, פתוח 24 שעות.</li>
+<li>אפשר לעשות שיט אם מתאים ולהוריד קצב אחרי יום פעיל.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Ci%C8%99migiu+Gardens+Bucharest" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day9"><div class="day-head"><div class="day-title"><h2>יום 10 • שלישי 14.7</h2><p class="subtitle">זוחלים, טרופי, קניון וקצת שופינג</p><div class="area">📍 Bucharest</div></div>
+<aside class="stay-card"><b>🏨 לינה: Ultimate Living Experience</b><div>12-15.07</div><div>54b Strada Aviator Popișteanu, Sector 1, Bucharest</div><div>סה״כ ₪2,868 • שולם</div><a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=54b+Strada+Aviator+Popi%C8%99teanu%2C+Sector+1%2C+Bucharest" rel="noopener" target="_blank">ניווט למלון</a></aside>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">🏨 Ultimate Living</span><span class="summary-chip">🦎 Reptiland</span><span class="summary-chip">🛍️ ParkLake</span><span class="summary-chip">🧳 אריזות</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר טוב</h3></div>
+<p>ארוחת בוקר ויציאה ליום משפחתי בבוקרשט.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event attraction"><div class="time">10:00</div><div class="event-top"><span class="badge">🎡 אטרקציה</span><h3>Reptiland Bucharest</h3></div>
+<ul>
+<li>מעל 70 זוחלים חיים, אקווריומים, יער טרופי וסדנאות אינטראקטיביות.</li>
+<li>כתובת: 1C Expoziției Boulevard, מול חניון Romexpo.</li>
+<li>עלויות משוערות: מבוגר 55 RON, ילד/סטודנט 45 RON, פנסיונר 35 RON, ילדים מתחת לגיל 4 ללא תשלום.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Reptiland+Bucharest+1C+Expozi%C8%9Biei+Boulevard" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event shopping"><div class="time">14:00</div><div class="event-top"><span class="badge">🛍️ שופינג</span><h3>ParkLake Shopping Center</h3></div>
+<ul>
+<li>זמן שופינג וארוחת צהריים בקניון.</li>
+<li>אופציה נוחה לסיום טיול בלי עומס.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=ParkLake+Shopping+Center+Bucharest" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event easy"><div class="time">23:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>התארגנות ליום החזרה</h3></div>
+<p>אריזת מזוודות, בדיקת דרכונים, כרטיסים וציוד לילדים לטיסה.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section><section class="day" id="day10"><div class="day-head"><div class="day-title"><h2>יום 11 • רביעי 15.7</h2><p class="subtitle">חוזרים הביתה: בוקרשט → תל אביב</p><div class="area">📍 OTP → TLV</div></div>
+</div><div class="day-summary"><b>היום בקצרה</b><div><span class="summary-chip">✈️ חזרה הביתה</span><span class="summary-chip">🚗 החזרת רכב ב־OTP</span><span class="summary-chip">🛂 דרכונים וכרטיסים</span><span class="summary-chip">🏠 נחיתה ב־TLV</span></div></div><div class="timeline">
+<article class="event easy"><div class="time">09:00</div><div class="event-top"><span class="badge">☕ רגוע</span><h3>בוקר אחרון בבוקרשט</h3></div>
+<p>ארוחת בוקר, סגירת מזוודות ובדיקת הדירה.</p>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event drive"><div class="time">10:30</div><div class="event-top"><span class="badge">🚗 נסיעה</span><h3>יציאה לשדה התעופה בבוקרשט והחזרת רכב</h3></div>
+<ul>
+<li>נוסעים ל־Henri Coandă International Airport (OTP) ומחזירים את הרכב.</li>
+<li>לוודא דלק/טעינה, קבלות, דרכונים ותיקים קטנים לטיסה.</li>
+</ul>
+<a class="nav" href="https://www.google.com/maps/search/?api=1&amp;query=Henri+Coand%C4%83+International+Airport+OTP" rel="noopener" target="_blank">פתח ניווט</a>
+<button class="read-more" type="button">קראי עוד</button></article>
+<article class="event flight"><div class="time">13:10</div><div class="event-top"><span class="badge">✈️ טיסה</span><h3>טיסה חזרה לישראל – W4 3263</h3></div>
+<ul>
+<li>טיסה מבוקרשט (OTP) לתל אביב, נתב״ג (TLV).</li>
+<li>שעת נחיתה מתוכננת לפי המסלול: 15:50.</li>
+</ul>
+<button class="read-more" type="button">קראי עוד</button></article>
+</div></section></div>
+<div class="footer">נבנה כקובץ HTML מקומי. הקישורים נפתחים בגוגל מפות.</div></main>
+<script>
+const tabs=[...document.querySelectorAll('.tab')];
+const days=[...document.querySelectorAll('.day')];
+const label=document.getElementById('currentDayLabel');
+function activeIndex(){return Math.max(0,tabs.findIndex(t=>t.classList.contains('active')));}
+function showDay(index){
+  index=Math.max(0,Math.min(tabs.length-1,index));
+  tabs.forEach(t=>t.classList.remove('active'));
+  days.forEach(d=>d.classList.remove('active'));
+  tabs[index].classList.add('active');
+  document.getElementById(tabs[index].dataset.day).classList.add('active');
+  label.textContent=tabs[index].childNodes[0].textContent.trim();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+tabs.forEach((tab,i)=>tab.addEventListener('click',()=>showDay(i)));
+document.getElementById('prevDay').addEventListener('click',()=>showDay(activeIndex()-1));
+document.getElementById('nextDay').addEventListener('click',()=>showDay(activeIndex()+1));
+
+// Priority labels: useful in expanded mode, hidden in compact mode.
+document.querySelectorAll('.event').forEach(ev=>{
+  const h=ev.querySelector('h3'); if(!h) return;
+  const text=h.textContent;
+  let cls='', txt='';
+  if(/טירת|7 הסולמות|טראנספאגאראשאן|בולבוצ|באלאה|פארק החבלים|מכרות|Reptiland|מוזיאון החושים|Kalinderu/.test(text)){txt='⭐ חובה';}
+  else if(/לילה טוב|שבת|מנוחה|התארגנות|אריזת|מקלחות/.test(text)){txt='☕ רגוע'; cls=' rest';}
+  else if(/אם|אפשרות|מרכז|שופינג|קניון|גלידה/.test(text)){txt='👍 גמיש'; cls=' optional';}
+  if(txt && !ev.querySelector('.priority')){h.insertAdjacentHTML('afterend', `<span class="priority${cls}">${txt}</span>`);}
+});
+
+const railButtons=[...document.querySelectorAll('.rail-btn[data-view]')];
+const compactButton=document.querySelector('.rail-btn[data-action="compact"]');
+const programView=document.getElementById('programView');
+const utilityPanels=document.getElementById('utilityPanels');
+const menuToggle=document.getElementById('menuToggle');
+const quickDrawer=document.getElementById('quickDrawer');
+const menuBackdrop=document.getElementById('menuBackdrop');
+const drawerClose=document.getElementById('drawerClose');
+function setMenu(open){
+  quickDrawer.classList.toggle('open', open);
+  menuBackdrop.classList.toggle('open', open);
+  menuToggle.textContent=open?'×':'☰';
+  menuToggle.setAttribute('aria-label', open?'סגירת תפריט':'פתיחת תפריט');
+}
+function setView(view){
+  railButtons.forEach(b=>b.classList.toggle('active', b.dataset.view===view));
+  const isProgram=view==='program';
+  programView.classList.toggle('hidden', !isProgram);
+  utilityPanels.classList.toggle('active', !isProgram);
+  document.querySelectorAll('.app-panel').forEach(p=>p.classList.remove('active'));
+  if(!isProgram){
+    const panel=document.getElementById('panel-'+view);
+    if(panel) panel.classList.add('active');
+  }
+  setMenu(false);
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+menuToggle.addEventListener('click',()=>setMenu(!quickDrawer.classList.contains('open')));
+menuBackdrop.addEventListener('click',()=>setMenu(false));
+drawerClose.addEventListener('click',()=>setMenu(false));
+railButtons.forEach(btn=>btn.addEventListener('click',()=>setView(btn.dataset.view)));
+if(compactButton){compactButton.addEventListener('click',()=>{document.body.classList.toggle('compact'); compactButton.textContent=document.body.classList.contains('compact')?'☰':'▦'; setMenu(false);});}
+document.querySelectorAll('.read-more').forEach(btn=>btn.addEventListener('click',()=>{const ev=btn.closest('.event'); ev.classList.toggle('expanded'); btn.textContent=ev.classList.contains('expanded')?'סגור':'קראי עוד';}));
+
+if(document.querySelector('[data-action="today"]')){
+document.querySelector('[data-action="today"]').addEventListener('click',()=>{
+ const start=new Date('2026-07-05');
+ const now=new Date();
+ const diff=Math.floor((now-start)/(1000*60*60*24));
+ if(diff>=0 && diff<11){ setView('program'); showDay(diff); }
+ else { alert(diff<0?'הטיול עוד לא התחיל 😊':'הטיול כבר הסתיים 😊'); }
+});
+}
+</script>
+</body></html>
